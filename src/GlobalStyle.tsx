@@ -4,7 +4,9 @@ const GlobalStyle = createGlobalStyle`
   :root {
     font-size: 62.5%;
   }
+
   * {
+    font-size: 1.6rem;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -17,6 +19,11 @@ const GlobalStyle = createGlobalStyle`
 
   button { 
     cursor: pointer;
+  }
+
+  a{
+    color: #000;
+    text-decoration: none;
   }
 `;
 
