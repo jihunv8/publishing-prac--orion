@@ -18,6 +18,7 @@ export default NewsRoom;
 
 const NewsRoomWrapper = styled.section`
   margin-top: 160px;
+  margin-bottom: 180px;
 `;
 
 const ContentsArea = styled.div`
