@@ -30,7 +30,6 @@ const HeaderWrapper = styled.header<{ isScrollUp: boolean }>`
   height: 90px;
   background-color: #fff;
   border-bottom: solid 1px #e2e2e2;
-  padding: 0 60px;
   position: fixed;
   z-index: 1000;
   transform: translateY(${({ isScrollUp }) => (isScrollUp ? '0' : '-100%')});
@@ -39,7 +38,6 @@ const HeaderWrapper = styled.header<{ isScrollUp: boolean }>`
 
 const InnerWrapper = styled.div`
   height: 100%;
-
   display: flex;
   justify-content: center;
   position: relative;
@@ -47,7 +45,7 @@ const InnerWrapper = styled.div`
 
 const LogoWrapper = styled.div`
   position: absolute;
-  left: 0;
+  left: 60px;
   top: 50%;
   transform: translateY(-50%);
 `;
