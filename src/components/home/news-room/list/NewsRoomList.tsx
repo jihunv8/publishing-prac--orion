@@ -28,8 +28,8 @@ const tempData = [
 const NewsRoomList = (): JSX.Element => {
   return (
     <NewsRoomListWrapper>
-      {tempData.map(({ content, imageUrl }) => {
-        return <ListCard content={content} imageUrl={imageUrl} />;
+      {tempData.map(({ content, imageUrl }, i) => {
+        return <ListCard key={i} content={content} imageUrl={imageUrl} />;
       })}
     </NewsRoomListWrapper>
   );

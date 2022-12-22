@@ -14,9 +14,10 @@ const CategorySelector = (): JSX.Element => {
   return (
     <CategorySelectorWrapper>
       <InnerWrapper>
-        {categorys.map(({ labelContent, value }) => {
+        {categorys.map(({ labelContent, value }, i) => {
           return (
             <RadioButton
+              key={i}
               labelContent={labelContent}
               value={value}
               checked={checkedBtn === value}
@@ -47,7 +48,7 @@ const RadioButton = ({ labelContent, value, checked = false, setCheckedBtn }: Ra
         name="category"
         value={value}
         checked={checked}
-        onClick={() => {
+        onChange={() => {
           setCheckedBtn(value);
         }}
       />

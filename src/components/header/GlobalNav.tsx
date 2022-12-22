@@ -12,7 +12,7 @@ const GlobalNav = () => {
       <NavMenuList>
         {navMenus.map(({ title, href, subMenu }, i) => {
           return (
-            <li onMouseEnter={() => setSelectedMenuIndex(i)} onMouseLeave={() => setSelectedMenuIndex(-1)}>
+            <li key={i} onMouseEnter={() => setSelectedMenuIndex(i)} onMouseLeave={() => setSelectedMenuIndex(-1)}>
               <a href={href}>{title}</a>
               <DropDownBox isSelected={selectedMenuIndex === i}>
                 <Depth1 subMenu={subMenu} />
@@ -81,9 +81,9 @@ const DropDownBox = styled.div<{ isSelected: boolean }>`
 const Depth1 = ({ subMenu }: { subMenu: SuperMenu[] }) => {
   return (
     <Depth1Wrapper>
-      {subMenu.map(({ title, href, subMenu }) => {
+      {subMenu.map(({ title, href, subMenu }, i) => {
         return (
-          <li>
+          <li key={i}>
             <a href={href}>{title}</a>
             <Depth2 subMenu={subMenu} />
           </li>
@@ -117,9 +117,9 @@ const Depth1Wrapper = styled.ul`
 const Depth2 = ({ subMenu }: { subMenu: Menu[] }) => {
   return (
     <Depth2Wrapper>
-      {subMenu.map(({ title, href }) => {
+      {subMenu.map(({ title, href }, i) => {
         return (
-          <li>
+          <li key={i}>
             <a href={href}>{title}</a>
           </li>
         );
