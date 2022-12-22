@@ -1,11 +1,17 @@
 import styled from 'styled-components';
 
+import iconSearch from '../../images/header/icon-search.png';
+
 const Util = () => {
   return (
     <UtilWrapper>
       <EnglishLink href="/en">English</EnglishLink>
-      <TempSearchBtn />
-      <TempHamburgerBtn />
+      <SearchBtn />
+      <HamburgerBtn>
+        <span></span>
+        <span></span>
+        <span></span>
+      </HamburgerBtn>
     </UtilWrapper>
   );
 };
@@ -33,15 +39,40 @@ const EnglishLink = styled.a`
   }
 `;
 
-const TempSearchBtn = styled.button`
+const SearchBtn = styled.button`
   width: 26px;
   height: 26px;
   margin-right: 16px;
-  border: solid 1px #000;
+  border: none;
+  background: url(${iconSearch}) no-repeat center / 24px;
 `;
 
-const TempHamburgerBtn = styled.button`
+const HamburgerBtn = styled.button`
   width: 30px;
   height: 30px;
-  border: solid 1px #000;
+  border: none;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  > span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background-color: #222;
+
+    &:first-chi ld {
+      margin-top: 3px;
+    }
+
+    &:nth-child(2) {
+      margin-top: 8px;
+    }
+
+    &:last-child {
+      margin-top: 8px;
+      width: 30px;
+    }
+  }
 `;

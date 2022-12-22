@@ -13,7 +13,9 @@ const GlobalNav = () => {
         {navMenus.map(({ title, href, subMenu }, i) => {
           return (
             <li key={i} onMouseEnter={() => setSelectedMenuIndex(i)} onMouseLeave={() => setSelectedMenuIndex(-1)}>
-              <a href={href}>{title}</a>
+              <RootMenu isSelected={selectedMenuIndex === i} href={href}>
+                {title}
+              </RootMenu>
               <DropDownBox isSelected={selectedMenuIndex === i}>
                 <Depth1 subMenu={subMenu} />
               </DropDownBox>
@@ -33,36 +35,36 @@ const NavMenuList = styled.ul`
 
   > li {
     padding: 0 36px;
+  }
+`;
 
-    > a {
-      display: flex;
-      align-items: center;
-      position: relative;
+const RootMenu = styled.a<{ isSelected: boolean }>`
+  display: flex;
+  align-items: center;
+  position: relative;
 
-      height: 100%;
+  height: 100%;
 
-      color: #222;
-      font-size: 1.8rem;
-      font-weight: 600;
-      line-height: 1.6;
+  color: #222;
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 1.6;
 
-      &::after {
-        content: '';
-        width: 0;
-        height: 3px;
-        background-color: transparent;
-        position: absolute;
-        bottom: -1px;
-        transition-duration: 0.45s;
-        left: 50%;
-        transform: translateX(-50%);
-      }
+  &::after {
+    content: '';
+    width: ${({ isSelected }) => (isSelected ? '100%' : '0')};
+    height: 3px;
+    background-color: ${({ isSelected }) => (isSelected ? '#e3051b' : 'transparent')};
+    position: absolute;
+    bottom: -1px;
+    transition-duration: 0.45s;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 
-      &:hover::after {
-        width: 100%;
-        background-color: #e3051b;
-      }
-    }
+  &:hover::after {
+    width: 100%;
+    background-color: #e3051b;
   }
 `;
 
@@ -103,7 +105,7 @@ const Depth1Wrapper = styled.ul`
 
   > li {
     &:not(:first-child) {
-      margin-left: 40px;
+      margin-left: 80px;
     }
 
     > a {
@@ -138,8 +140,35 @@ const Depth2Wrapper = styled.ul`
     }
 
     > a {
+      display: block;
+      width: fit-content;
+      position: relative;
+
       color: #222;
       line-height: 1.4;
+
+      transition: 0.45s;
+
+      &:hover {
+        color: #e3051b;
+
+        &::after {
+          width: 100%;
+        }
+      }
+
+      &::after {
+        content: '';
+        display: block;
+        width: 0;
+        height: 1px;
+        background-color: #e3051b;
+        position: relative;
+        bottom: 0;
+        left: 0;
+
+        transition: 0.45s;
+      }
     }
   }
 `;
