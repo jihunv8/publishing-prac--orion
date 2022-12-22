@@ -59,10 +59,15 @@ const NavItemButton = styled.button<NavItemButtonProps>`
     right: 0;
     transition: all 0.35s 0s ease-in-out;
   }
+
+  :hover::before {
+    transform: translateY(-100%);
+  }
+
   ${({ isActive }) =>
-    !isActive &&
+    isActive &&
     css`
-      :hover::before {
+      ::before {
         transform: translateY(-100%);
       }
     `};

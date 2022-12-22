@@ -14,6 +14,10 @@ export type BannerTitleProps = {
 };
 
 export type BannerProps = {
+  isVisible: boolean;
+};
+
+export type BannerBackgroundImgeProps = {
   imageUrl: string;
   isVisible: boolean;
 };
