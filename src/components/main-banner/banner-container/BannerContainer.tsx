@@ -7,8 +7,8 @@ const BannerContainer = ({ bannerIndex, bannerItems }: BannerContainerProps) => 
     <BannerContainerWrapper>
       {bannerItems.map((item, i) => {
         return (
-          <a href="">
-            <Banner key={i} isVisible={bannerIndex === i}>
+          <a key={i} href="">
+            <Banner isVisible={bannerIndex === i}>
               <BannerTitle textColor={item.textColor}>{item.content}</BannerTitle>
               <BackgroundImage imageUrl={item.imageUrl} isVisible={bannerIndex === i} />
             </Banner>
