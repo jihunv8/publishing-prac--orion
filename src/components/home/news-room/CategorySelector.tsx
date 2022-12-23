@@ -1,16 +1,20 @@
-import { useState } from 'react';
 import styled from 'styled-components';
 
-const categorys = [
+export type CategoryType = 'all' | 'youtube' | 'instagram' | 'news';
+
+const categorys: { labelContent: string; value: CategoryType }[] = [
   { labelContent: '전체', value: 'all' },
   { labelContent: '유튜브', value: 'youtube' },
   { labelContent: '인스타그램', value: 'instagram' },
-  { labelContent: '보도자료', value: 'press-release' },
+  { labelContent: '보도자료', value: 'news' },
 ];
 
-const CategorySelector = (): JSX.Element => {
-  const [checkedBtn, setCheckedBtn] = useState('all');
+type CategorySelectorProps = {
+  selectedCategory: CategoryType;
+  setSelectedCategory: React.Dispatch<CategoryType>;
+};
 
+const CategorySelector = ({ selectedCategory = 'all', setSelectedCategory }: CategorySelectorProps): JSX.Element => {
   return (
     <CategorySelectorWrapper>
       <InnerWrapper>
@@ -20,8 +24,8 @@ const CategorySelector = (): JSX.Element => {
               key={i}
               labelContent={labelContent}
               value={value}
-              checked={checkedBtn === value}
-              setCheckedBtn={setCheckedBtn}
+              checked={selectedCategory === value}
+              setSelectedCategory={setSelectedCategory}
             />
           );
         })}
@@ -34,12 +38,12 @@ export default CategorySelector;
 
 type RadioButtonProps = {
   labelContent: string;
-  value: string;
+  value: CategoryType;
   checked: boolean;
-  setCheckedBtn: React.Dispatch<string>;
+  setSelectedCategory: React.Dispatch<CategoryType>;
 };
 
-const RadioButton = ({ labelContent, value, checked = false, setCheckedBtn }: RadioButtonProps): JSX.Element => {
+const RadioButton = ({ labelContent, value, checked = false, setSelectedCategory }: RadioButtonProps): JSX.Element => {
   return (
     <>
       <InputRadio
@@ -49,7 +53,7 @@ const RadioButton = ({ labelContent, value, checked = false, setCheckedBtn }: Ra
         value={value}
         checked={checked}
         onChange={() => {
-          setCheckedBtn(value);
+          setSelectedCategory(value);
         }}
       />
       <BtnLabel htmlFor={`category-${value}`}>{labelContent}</BtnLabel>

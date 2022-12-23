@@ -1,13 +1,20 @@
 import styled from 'styled-components';
 
+import iconInstagram from '../../../../images/home/news-room/social_icon_instagram.png';
+import iconYoutube from '../../../../images/home/news-room/social_icon_youtube.png';
+import iconNews from '../../../../images/home/news-room/social_icon_news.png';
+
+const iconUrls = { instagram: iconInstagram, youtube: iconYoutube, news: iconNews };
+
 export type ListCardProps = {
   content: string;
   imageUrl: string;
+  category: 'instagram' | 'youtube' | 'news';
 };
 
-const ListCard = ({ content, imageUrl }: ListCardProps): JSX.Element => {
+const ListCard = ({ content, imageUrl, category }: ListCardProps): JSX.Element => {
   return (
-    <ListCardWrapper imageUrl={imageUrl}>
+    <ListCardWrapper imageUrl={imageUrl} category={category}>
       <InnerWrapper href="">
         <Content>{content}</Content>
       </InnerWrapper>
@@ -17,10 +24,28 @@ const ListCard = ({ content, imageUrl }: ListCardProps): JSX.Element => {
 
 export default ListCard;
 
-const ListCardWrapper = styled.li<{ imageUrl: string }>`
+type ListCardWrapperProps = {
+  imageUrl: string;
+  category: 'instagram' | 'youtube' | 'news';
+};
+
+const ListCardWrapper = styled.li<ListCardWrapperProps>`
   width: 100%;
   height: 100%;
   background: #000 url(${({ imageUrl }) => imageUrl}) no-repeat center/contain;
+  position: relative;
+
+  ::after {
+    content: '';
+    display: block;
+    width: 36px;
+    height: 36px;
+    background: url(${({ category }) => iconUrls[category]}) no-repeat center / cover;
+    position: absolute;
+    right: 1.6rem;
+    bottom: 1.6rem;
+    z-index: 1;
+  }
 `;
 
 const Content = styled.p`
