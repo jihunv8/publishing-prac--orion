@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { mediaSmall, mediaXLarge } from '../../../styles/mediaSize';
 
 export type CategoryType = 'all' | 'youtube' | 'instagram' | 'news';
 
@@ -79,6 +80,14 @@ const BtnLabel = styled.label`
   margin-right: 16px;
   font-size: 2rem;
   line-height: 1.2;
+
+  @media ${mediaXLarge} {
+    font-size: 1.75rem;
+  }
+
+  @media ${mediaSmall} {
+    font-size: 1.6rem;
+  }
 `;
 
 const InputRadio = styled.input<{ type: 'radio' }>`

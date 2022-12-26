@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import iconInstagram from '../../../../images/home/news-room/social_icon_instagram.png';
 import iconYoutube from '../../../../images/home/news-room/social_icon_youtube.png';
 import iconNews from '../../../../images/home/news-room/social_icon_news.png';
+import { mediaMiddle, mediaSmall, mediaXLarge, mediaXSmall } from '../../../../styles/mediaSize';
 
 const iconUrls = { instagram: iconInstagram, youtube: iconYoutube, news: iconNews };
 
@@ -31,9 +32,9 @@ type ListCardWrapperProps = {
 
 const ListCardWrapper = styled.li<ListCardWrapperProps>`
   width: 100%;
-  height: 100%;
   background: #000 url(${({ imageUrl }) => imageUrl}) no-repeat center/contain;
   position: relative;
+  aspect-ratio: 1/1;
 
   ::after {
     content: '';
@@ -45,6 +46,10 @@ const ListCardWrapper = styled.li<ListCardWrapperProps>`
     right: 1.6rem;
     bottom: 1.6rem;
     z-index: 1;
+  }
+
+  @media ${mediaSmall} {
+    height: 242px;
   }
 `;
 
@@ -67,6 +72,18 @@ const Content = styled.p`
 
   transform: translateY(100%);
   transition: 0.35s ease-in-out;
+
+  @media ${mediaXLarge} {
+    font-size: 2.1rem;
+  }
+
+  @media ${mediaMiddle} {
+    font-size: 1.6rem;
+  }
+
+  @media ${mediaXSmall} {
+    font-size: 1.8rem;
+  }
 `;
 
 const InnerWrapper = styled.a`

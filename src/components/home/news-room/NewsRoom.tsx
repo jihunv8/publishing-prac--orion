@@ -5,6 +5,7 @@ import NewsRoomList from './list/NewsRoomList';
 
 import type { NewsRoomItem } from './list/NewsRoomList';
 import type { CategoryType } from './CategorySelector';
+import { mediaSmall, mediaXLarge } from '../../../styles/mediaSize';
 
 const NewsRoom = (): JSX.Element => {
   const [data, setData] = useState<NewsRoomItem[]>([]);
@@ -43,6 +44,8 @@ export default NewsRoom;
 const NewsRoomWrapper = styled.section`
   margin-top: 160px;
   margin-bottom: 180px;
+
+  padding: 0 16px;
 `;
 
 const ContentsArea = styled.div`
@@ -55,4 +58,12 @@ const Title = styled.h2`
   font-size: 4.4rem;
   font-weight: 800;
   line-height: 1.4;
+
+  @media ${mediaXLarge} {
+    font-size: 3.85rem;
+  }
+
+  @media ${mediaSmall} {
+    font-size: 2.8rem;
+  }
 `;

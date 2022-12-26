@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { mediaSmall } from '../../../../styles/mediaSize';
 import ListCard from './ListCard';
 
 export type NewsRoomItem = {
@@ -25,8 +26,12 @@ export default NewsRoomList;
 
 const NewsRoomListWrapper = styled.ul`
   margin-top: 50px;
-  height: 600px;
   display: grid;
   grid-template: repeat(2, 1fr) / repeat(4, 1fr);
   gap: 1px;
+
+  @media ${mediaSmall} {
+    display: flex;
+    overflow-x: scroll;
+  }
 `;
