@@ -1,17 +1,19 @@
 import styled from 'styled-components';
+import { mediaSmall, mediaXLarge } from '../../../styles/mediaSize';
 import EMNav from './em-nav/EMNav';
 
 const EthicalManagement = (): JSX.Element => {
-  const contentText =
-    ' 오리온이 지향하는 윤리경영은 준법과 윤리에 기반한 경영활동을 통해\n모든 이해관계자에게 기여함으로써지속적으로 성장해 나가는 것입니다.';
   return (
     <EthicalManagementWrapper>
       <ContentsArea>
         <Header>
           <Title>윤리경영</Title>
-          <Content>{contentText}</Content>
-          <EMNav />
+          <Content>
+            오리온이 지향하는 윤리경영은 준법과 윤리에 기반한 경영활동을 통해 <br />
+            모든 이해관계자에게 기여함으로써지속적으로 성장해 나가는 것입니다.
+          </Content>
         </Header>
+        <EMNav />
       </ContentsArea>
     </EthicalManagementWrapper>
   );
@@ -24,8 +26,9 @@ const EthicalManagementWrapper = styled.section`
 `;
 
 const ContentsArea = styled.div`
-  max-width: 1200px;
+  max-width: 1232px;
   margin: 0 auto;
+  padding: 0 16px;
 `;
 
 const Header = styled.div`
@@ -39,6 +42,14 @@ const Title = styled.h2`
   font-size: 4.4rem;
   font-weight: 800;
   line-height: 1.4;
+
+  @media ${mediaXLarge} {
+    font-size: 3.85rem;
+  }
+
+  @media ${mediaSmall} {
+    font-size: 2.8rem;
+  }
 `;
 
 const Content = styled.p`
@@ -47,4 +58,17 @@ const Content = styled.p`
   font-size: 2rem;
   line-height: 1.4;
   white-space: pre-wrap;
+  text-align: center;
+
+  @media ${mediaXLarge} {
+    font-size: 1.75rem;
+  }
+
+  @media ${mediaSmall} {
+    line-height: 1.6;
+
+    > br {
+      display: none;
+    }
+  }
 `;

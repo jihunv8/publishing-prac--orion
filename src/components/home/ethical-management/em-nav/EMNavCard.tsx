@@ -1,15 +1,17 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+import { mediaMiddle, mediaSmall, mediaXLarge, mediaXSmall } from '../../../../styles/mediaSize';
 
 export type EMNavCardProps = {
   title: string;
   content: string;
   imageUrl: string;
+  imageMUrl?: string;
   hoverColor: string;
 };
 
-const EMNavCard = ({ title, content, imageUrl, hoverColor }: EMNavCardProps): JSX.Element => {
+const EMNavCard = ({ title, content, imageUrl, imageMUrl, hoverColor }: EMNavCardProps): JSX.Element => {
   return (
-    <EMNavCardWrapper imageUrl={imageUrl}>
+    <EMNavCardWrapper imageUrl={imageUrl} imageMUrl={imageMUrl}>
       <InnerWrapper href="" hoverColor={hoverColor}>
         <Title>{title}</Title>
         <Content>{content}</Content>
@@ -20,10 +22,38 @@ const EMNavCard = ({ title, content, imageUrl, hoverColor }: EMNavCardProps): JS
 
 export default EMNavCard;
 
-const EMNavCardWrapper = styled.li<{ imageUrl: string }>`
+const EMNavCardWrapper = styled.li<{ imageUrl: string; imageMUrl?: string }>`
   width: 100%;
-  height: 100%;
   background: url(${({ imageUrl }) => imageUrl}) no-repeat center/cover;
+  position: relative;
+  aspect-ratio: 1/1;
+
+  &:last-child {
+    grid-row: 1 / span 2;
+    grid-column: 4;
+
+    aspect-ratio: auto;
+  }
+
+  > img {
+    width: 100%;
+  }
+
+  @media ${mediaSmall} {
+    ${({ imageMUrl }) => {
+      if (imageMUrl !== undefined) {
+        return css`
+          background-image: url(${imageMUrl});
+        `;
+      }
+      return null;
+    }}
+
+    &:last-child {
+      grid-row: 4;
+      grid-column: 1 / span 2;
+    }
+  }
 `;
 
 const Content = styled.p`
@@ -41,7 +71,9 @@ const InnerWrapper = styled.a<{ hoverColor: string }>`
   width: 100%;
   height: 100%;
   padding: 40px;
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
   transition: background-color 0.35s ease-in-out;
 
   &:hover {
@@ -52,6 +84,18 @@ const InnerWrapper = styled.a<{ hoverColor: string }>`
       transform: translateY(0);
     }
   }
+
+  @media ${mediaXLarge} {
+    padding: 35px;
+  }
+
+  @media ${mediaMiddle} {
+    padding: 14px;
+  }
+
+  @media ${mediaXSmall} {
+    padding: 16px;
+  }
 `;
 
 const Title = styled.h3`
@@ -59,4 +103,12 @@ const Title = styled.h3`
   font-size: 3.6rem;
   font-weight: 700;
   line-height: 1.2;
+
+  @media ${mediaXLarge} {
+    font-size: 3.15rem;
+  }
+
+  @media ${mediaSmall} {
+    font-size: 2.4rem;
+  }
 `;

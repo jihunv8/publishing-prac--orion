@@ -11,7 +11,7 @@ const Home = (): JSX.Element => {
       <MainBanner />
       <EthicalManagement />
       <NewsRoom />
-      <Footer></Footer>
+      <Footer />
     </div>
   );
 };

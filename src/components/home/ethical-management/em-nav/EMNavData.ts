@@ -7,6 +7,7 @@ import backgroundImage4 from '../../../../images/home/ethical-management/ethical
 import backgroundImage5 from '../../../../images/home/ethical-management/ethical_img05.jpg';
 import backgroundImage6 from '../../../../images/home/ethical-management/ethical_img06.jpg';
 import backgroundImage7 from '../../../../images/home/ethical-management/ethical_img07.jpg';
+import backgroundImageM7 from '../../../../images/home/ethical-management/ethical_img07_m.jpg';
 
 const data: EMNavCardProps[] = [
   {
@@ -49,6 +50,7 @@ const data: EMNavCardProps[] = [
     title: '보고서 및 주요성과',
     content: '윤리경영 주요활동 및 성과를 소개합니다.',
     imageUrl: backgroundImage7,
+    imageMUrl: backgroundImageM7,
     hoverColor: 'rgba(20, 160, 76, 0.85)',
   },
 ];
