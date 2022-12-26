@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 import linkIcon from '../../images/footer/link_icon.svg';
+import { mediaXLarge } from '../../styles/mediaSize';
 
 const FooterNav = () => {
   return (
@@ -19,6 +20,11 @@ const FooterNavWrapper = styled.div`
   justify-self: end;
   display: flex;
   align-items: flex-end;
+
+  @media screen and (max-width: 960px) {
+    justify-self: start;
+    margin-top: 26px;
+  }
 `;
 
 const Anchor = styled.a`
@@ -37,5 +43,13 @@ const Anchor = styled.a`
     height: 1.6rem;
     background: url(${linkIcon}) no-repeat center;
     margin-left: 0.8rem;
+  }
+
+  @media ${mediaXLarge} {
+    font-size: 1.575rem;
+  }
+
+  @media screen and (max-width: 960px) {
+    font-size: 1.8rem;
   }
 `;

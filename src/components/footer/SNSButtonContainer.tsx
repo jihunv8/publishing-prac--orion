@@ -4,6 +4,7 @@ import iconYoutube from '../../images/footer/icon_youtube.png';
 import iconInstagram from '../../images/footer/icon_instagram.png';
 import iconBlog from '../../images/footer/icon_blog.png';
 import iconFacebook from '../../images/footer/icon_facebook.png';
+import { mediaSmall } from '../../styles/mediaSize';
 
 const SNSButtonContainer = () => {
   return (
@@ -19,11 +20,14 @@ const SNSButtonContainer = () => {
 export default SNSButtonContainer;
 
 const SNSButtonContainerWrapper = styled.div`
-  grid-area: sns-btns;
   justify-self: end;
 
   display: flex;
   align-items: center;
+
+  @media ${mediaSmall} {
+    margin-top: 18px;
+  }
 `;
 
 const Anchor = styled.a<{ imageUrl: string }>`

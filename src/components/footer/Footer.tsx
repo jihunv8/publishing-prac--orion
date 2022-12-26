@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 import logo from '../../images/footer/f_logo.png';
+import { mediaSmall, mediaXLarge } from '../../styles/mediaSize';
 
 import Address from './Address';
 import FamilySite from './FamilySite';
@@ -17,11 +18,13 @@ const Footer = () => {
         </Logo>
         <FooterNav />
         <FooterSubNav />
+        <FamilySite />
         <Address />
         <Line />
-        <Copyright>COPYRIGHT ORION CORP. ALL RIGHT RESERVED.</Copyright>
-        <SNSButtonContainer />
-        <FamilySite />
+        <ETC>
+          <Copyright>COPYRIGHT ORION CORP. ALL RIGHT RESERVED.</Copyright>
+          <SNSButtonContainer />
+        </ETC>
       </ContentsArea>
     </FooterWrapper>
   );
@@ -42,8 +45,21 @@ const ContentsArea = styled.div`
     'logo footer-nav footer-nav'
     'address footer-sub-nav footer-sub-nav'
     'line line line'
-    'copyright sns-btns family-site'
-    / 1fr 1fr auto;
+    'etc etc family-site'
+    / 1fr auto auto;
+
+  @media ${mediaXLarge} {
+    padding: 70px 14px 44px;
+  }
+
+  @media screen and (max-width: 960px) {
+    padding-top: 40px;
+    display: block;
+  }
+
+  @media ${mediaSmall} {
+    padding-top: 70px;
+  }
 `;
 
 const Logo = styled.div`
@@ -56,10 +72,34 @@ const Line = styled.div`
   margin-bottom: 20px;
   height: 1px;
   background-color: #444;
+
+  @media ${mediaXLarge} {
+    margin-top: 35px;
+    margin-bottom: 18px;
+  }
+
+  @media screen and (max-width: 960px) {
+    display: none;
+  }
+`;
+
+const ETC = styled.div`
+  grid-area: etc;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @media screen and (max-width: 960px) {
+    margin-top: 35px;
+  }
+
+  @media ${mediaSmall} {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 `;
 
 const Copyright = styled.p`
-  grid-area: 'copyright';
   color: #777;
   font-size: 1.4rem;
   font-weight: 400;

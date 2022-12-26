@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { mediaXLarge } from '../../styles/mediaSize';
 
 const FooterSubNav = () => {
   return (
@@ -19,6 +20,15 @@ const FooterSubNavWrapper = styled.div`
   grid-area: footer-sub-nav;
   justify-self: end;
   margin-top: 26px;
+
+  @media ${mediaXLarge} {
+    margin-top: 22px;
+  }
+
+  @media screen and (max-width: 960px) {
+    justify-self: start;
+    margin-top: 18px;
+  }
 `;
 
 const Anchor = styled.a<{ strong?: boolean }>`

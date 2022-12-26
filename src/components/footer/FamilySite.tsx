@@ -20,4 +20,10 @@ const FamilySiteWrapper = styled.div`
   color: #d2d2d2;
   font-size: 1.4rem;
   line-height: 1.6;
+
+  @media screen and (max-width: 960px) {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 18px;
+  }
 `;

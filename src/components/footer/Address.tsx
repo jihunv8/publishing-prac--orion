@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { mediaSmall, mediaXLarge } from '../../styles/mediaSize';
 
 const Address = () => {
   return (
@@ -38,12 +39,32 @@ const AddressWrapper = styled.div`
     font-size: 1.4rem;
     font-weight: 400;
     line-height: 1.6;
+
+    &:last-child {
+      margin-top: 5px;
+    }
+  }
+
+  @media ${mediaXLarge} {
+    margin-top: 22px;
+  }
+
+  @media screen and (max-width: 960px) {
+    margin-top: 18px;
+
+    > p {
+      color: #777;
+    }
   }
 `;
 
 const Content = styled.span`
-  margin-top: 5px;
+  display: inline-block;
   margin-right: 16px;
+
+  @media ${mediaXLarge} {
+    margin-right: 14px;
+  }
 `;
 
 const Key = styled.span`
