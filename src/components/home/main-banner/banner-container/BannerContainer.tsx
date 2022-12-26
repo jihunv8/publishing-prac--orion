@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { mediaSmall, mediaXLarge, mediaXSmall } from '../../../../styles/mediaSize';
 
 import type {
   BannerContainerProps,
@@ -27,6 +28,14 @@ const BannerContainer = ({ bannerIndex, bannerItems }: BannerContainerProps) => 
 const BannerContainerWrapper = styled.div`
   height: 870px;
   position: relative;
+
+  @media ${mediaXLarge} {
+    height: 760px;
+  }
+
+  @media ${mediaSmall} {
+    height: 566px;
+  }
 `;
 
 const Banner = styled.div<BannerProps>`
@@ -53,14 +62,27 @@ const BackgroundImage = styled.div<BannerBackgroundImgeProps>`
 const BannerTitle = styled.h2<BannerTitleProps>`
   ${({ textColor }) => textColor !== undefined && `color: ${textColor}`};
   position: relative;
-  width: 1200px;
-  padding-top: 190px;
+  max-width: 1200px;
+  padding: 190px 16px 0;
   margin: 0 auto;
   font-size: 5.2rem;
   font-weight: 800;
   line-height: 1.4;
   letter-spacing: -0.02em;
   white-space: pre-wrap;
+
+  @media ${mediaXLarge} {
+    padding-top: 166px;
+    white-space: normal;
+  }
+
+  @media ${mediaSmall} {
+    font-size: 3.2rem;
+  }
+
+  @media ${mediaXSmall} {
+    padding-top: 130px;
+  }
 `;
 
 export default BannerContainer;

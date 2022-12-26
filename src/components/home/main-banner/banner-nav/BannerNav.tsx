@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { mediaMiddle, mediaSmall, mediaXLarge, mediaXSmall } from '../../../../styles/mediaSize';
 import type { BannerNavItemProps, BannerNavProps, NavItemButtonProps } from './BannerNav.d';
 
 const BannerNav = ({ bannerNavItems, bannerIndex, setBannerIndex }: BannerNavProps) => {
@@ -26,17 +27,43 @@ export default BannerNav;
 
 const BannerNavWrapper = styled.ul`
   margin: -90px auto 0;
-  max-width: 1200px;
+  padding: 0 16px;
+  max-width: 1232px;
   display: flex;
   position: relative;
+
+  @media ${mediaMiddle} {
+    padding: 0;
+  }
+
+  @media ${mediaXSmall} {
+    display: grid;
+    grid-template: 1fr 1fr / 1fr 1fr;
+  }
 `;
 
 const NavItem = styled.li<BannerNavItemProps>`
   width: 25%;
   height: 180px;
   background: url(${({ thumbUrl }) => thumbUrl}) no-repeat center;
+
   :not(:first-child) {
     margin-left: 18px;
+  }
+
+  @media ${mediaXLarge} {
+    height: 158px;
+  }
+
+  @media ${mediaMiddle} {
+    :not(:first-child) {
+      margin-left: 0;
+    }
+  }
+
+  @media ${mediaXSmall} {
+    width: 100%;
+    height: 74px;
   }
 `;
 
@@ -115,5 +142,41 @@ const NavItemButton = styled.button<NavItemButtonProps>`
     font-size: 4.4rem;
     font-weight: 800;
     align-items: center;
+  }
+
+  @media ${mediaXLarge} {
+    padding: 10px;
+
+    > h3 {
+      font-size: 2.8rem;
+
+      ${({ isActive }) =>
+        isActive &&
+        css`
+          font-size: 3.2rem;
+        `}
+    }
+
+    :hover > h3 {
+      font-size: 3.2rem;
+    }
+  }
+
+  @media ${mediaSmall} {
+    padding: 5px;
+
+    > h3 {
+      font-size: 1.6rem;
+
+      ${({ isActive }) =>
+        isActive &&
+        css`
+          font-size: 2.4rem;
+        `}
+    }
+
+    :hover > h3 {
+      font-size: 2.4rem;
+    }
   }
 `;
