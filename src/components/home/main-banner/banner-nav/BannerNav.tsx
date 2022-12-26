@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { BannerNavItemProps, BannerNavProps, NavItemButtonProps } from './BannerNav.d';
+import type { BannerNavItemProps, BannerNavProps, NavItemButtonProps } from './BannerNav.d';
 
 const BannerNav = ({ bannerNavItems, bannerIndex, setBannerIndex }: BannerNavProps) => {
   return (

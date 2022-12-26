@@ -24,7 +24,6 @@ const MainBanner = (): JSX.Element => {
   return (
     <MainBannerWrapper>
       <BannerContainer bannerIndex={bannerIndex} bannerItems={bannerItems} />
-
       <BannerNav bannerNavItems={bannerNavItems} bannerIndex={bannerIndex} setBannerIndex={setBannerIndex} />
     </MainBannerWrapper>
   );

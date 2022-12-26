@@ -1,15 +1,15 @@
-import bannerImage1 from '../../images/main-banner/cover_img01.jpg';
-import bannerImage2 from '../../images/main-banner/cover_img02.jpg';
-import bannerImage3 from '../../images/main-banner/cover_img03.jpg';
-import bannerImage4 from '../../images/main-banner/cover_img04.jpg';
+import bannerImage1 from '../../../images/main-banner/cover_img01.jpg';
+import bannerImage2 from '../../../images/main-banner/cover_img02.jpg';
+import bannerImage3 from '../../../images/main-banner/cover_img03.jpg';
+import bannerImage4 from '../../../images/main-banner/cover_img04.jpg';
 
-import thumbImage1 from '../../images/main-banner/cover_thumb01.jpg';
-import thumbImage2 from '../../images/main-banner/cover_thumb02.jpg';
-import thumbImage3 from '../../images/main-banner/cover_thumb03.jpg';
-import thumbImage4 from '../../images/main-banner/cover_thumb04.jpg';
+import thumbImage1 from '../../../images/main-banner/cover_thumb01.jpg';
+import thumbImage2 from '../../../images/main-banner/cover_thumb02.jpg';
+import thumbImage3 from '../../../images/main-banner/cover_thumb03.jpg';
+import thumbImage4 from '../../../images/main-banner/cover_thumb04.jpg';
 
-import { BannerItem } from './banner-container/BannerContainer.d';
-import { BannerNavItem } from './banner-nav/BannerNav.d';
+import type { BannerItem } from './banner-container/BannerContainer.d';
+import type { BannerNavItem } from './banner-nav/BannerNav.d';
 
 export const bannerItems: BannerItem[] = [
   { content: '맛있고 품질 좋은 제품을\n합리적인 가격으로 공급합니다.', imageUrl: bannerImage1, textColor: '#fff' },

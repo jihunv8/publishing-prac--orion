@@ -1,6 +1,11 @@
 import styled from 'styled-components';
 
-import { BannerBackgroundImgeProps, BannerContainerProps, BannerProps, BannerTitleProps } from './BannerContainer.d';
+import type {
+  BannerContainerProps,
+  BannerProps,
+  BannerBackgroundImgeProps,
+  BannerTitleProps,
+} from './BannerContainer.d';
 
 const BannerContainer = ({ bannerIndex, bannerItems }: BannerContainerProps) => {
   return (
