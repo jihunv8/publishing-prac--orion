@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 import iconSearch from '../../images/header/icon-search.png';
+import { mediaXLarge } from '../../styles/mediaSize';
 
 const Util = () => {
   return (
@@ -25,6 +26,10 @@ const UtilWrapper = styled.div`
   right: 60px;
   top: 50%;
   transform: translateY(-50%);
+
+  @media ${mediaXLarge} {
+    right: 20px;
+  }
 `;
 
 const EnglishLink = styled.a`
@@ -36,6 +41,11 @@ const EnglishLink = styled.a`
 
   &:hover {
     color: #e3051b;
+  }
+
+  @media ${mediaXLarge} {
+    margin-right: 28px;
+    font-size: 1.225rem;
   }
 `;
 

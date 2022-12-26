@@ -3,6 +3,7 @@ import { useState } from 'react';
 
 import navMenus from './navMenus';
 import { Menu, SuperMenu } from './navMenus.d';
+import { mediaLarge, mediaXLarge } from '../../styles/mediaSize';
 
 const GlobalNav = () => {
   const [selectedMenuIndex, setSelectedMenuIndex] = useState(-1);
@@ -36,6 +37,22 @@ const NavMenuList = styled.ul`
   > li {
     padding: 0 36px;
   }
+
+  @media ${mediaXLarge} {
+    > li {
+      padding: 0 31.5px;
+    }
+  }
+
+  @media ${mediaLarge} {
+    > li {
+      padding: 0 24px;
+    }
+  }
+
+  @media screen and (max-width: 960px) {
+    display: none;
+  }
 `;
 
 const RootMenu = styled.a<{ isSelected: boolean }>`
@@ -65,6 +82,10 @@ const RootMenu = styled.a<{ isSelected: boolean }>`
   &:hover::after {
     width: 100%;
     background-color: #e3051b;
+  }
+
+  @media ${mediaXLarge} {
+    font-size: 1.575rem;
   }
 `;
 

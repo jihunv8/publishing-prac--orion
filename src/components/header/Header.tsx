@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { useIsScrollUp } from '../../hooks/scroll';
 
 import logoImage from '../../images/logo.png';
+import { mediaSmall, mediaXLarge } from '../../styles/mediaSize';
 import GlobalNav from './GlobalNav';
 import Util from './Util';
 
@@ -34,6 +35,18 @@ const HeaderWrapper = styled.header<{ isScrollUp: boolean }>`
   z-index: 1000;
   transform: translateY(${({ isScrollUp }) => (isScrollUp ? '0' : '-100%')});
   transition: 0.45s;
+
+  @media ${mediaXLarge} {
+    height: 78px;
+  }
+
+  @media screen and (max-width: 960px) {
+    height: 66px;
+  }
+
+  @media ${mediaSmall} {
+    height: 75px;
+  }
 `;
 
 const InnerWrapper = styled.div`
@@ -48,4 +61,8 @@ const LogoWrapper = styled.div`
   left: 60px;
   top: 50%;
   transform: translateY(-50%);
+
+  @media ${mediaXLarge} {
+    left: 20px;
+  }
 `;
