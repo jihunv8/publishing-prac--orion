@@ -3,7 +3,7 @@ import { useIsScrollUp } from '../../hooks/scroll';
 
 import logoImage from '../../images/logo.png';
 import { mediaSmall, mediaXLarge } from '../../styles/mediaSize';
-import GlobalNav from './GlobalNav';
+import GlobalNav from './global-nav/GlobalNav';
 import Util from './Util';
 
 const Header = () => {

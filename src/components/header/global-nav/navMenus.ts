@@ -1,4 +1,4 @@
-import { Menu, SuperMenu, RootMenu } from './navMenus.d';
+import { RootMenu } from './navMenus.d';
 
 const navMenus: RootMenu[] = [
   {
