@@ -12,10 +12,10 @@ const SuperMenuList = ({ menus }: SuperMenuListProps) => {
     <SuperMenuListWrapper>
       {menus.map(({ title, href, subMenu }, i) => {
         return (
-          <li key={i}>
-            <a href={href}>{title}</a>
+          <ListItem key={i}>
+            <Anchor href={href}>{title}</Anchor>
             <MenuList menus={subMenu} />
-          </li>
+          </ListItem>
         );
       })}
     </SuperMenuListWrapper>
@@ -31,16 +31,16 @@ const SuperMenuListWrapper = styled.ul`
   position: relative;
   left: 50%;
   transform: translateX(-50%);
+`;
 
-  > li {
-    &:not(:first-child) {
-      margin-left: 80px;
-    }
-
-    > a {
-      color: #222;
-      font-size: 1.8rem;
-      font-weight: 700;
-    }
+const ListItem = styled.li`
+  &:not(:first-child) {
+    margin-left: 80px;
   }
+`;
+
+const Anchor = styled.a`
+  color: #222;
+  font-size: 1.8rem;
+  font-weight: 700;
 `;

@@ -13,14 +13,14 @@ const RootMenuList = () => {
         const isSelected = selectedMenuIndex === i;
 
         return (
-          <li key={i} onMouseEnter={() => setSelectedMenuIndex(i)} onMouseLeave={() => setSelectedMenuIndex(-1)}>
+          <ListItem key={i} onMouseEnter={() => setSelectedMenuIndex(i)} onMouseLeave={() => setSelectedMenuIndex(-1)}>
             <Anchor href={href} isSelected={isSelected}>
               {title}
             </Anchor>
             <DropDownBox isSelected={isSelected}>
               <SuperMenuList menus={subMenu} />
             </DropDownBox>
-          </li>
+          </ListItem>
         );
       })}
     </RootMenuListWrapper>
@@ -33,32 +33,27 @@ const RootMenuListWrapper = styled.ul`
   height: 100%;
   display: flex;
 
-  > li {
-    padding: 0 36px;
-  }
-
-  @media ${mediaXLarge} {
-    > li {
-      padding: 0 31.5px;
-    }
-  }
-
-  @media ${mediaLarge} {
-    > li {
-      padding: 0 24px;
-    }
-  }
-
   @media screen and (max-width: 960px) {
     display: none;
   }
 `;
 
+const ListItem = styled.li`
+  padding: 0 36px;
+
+  @media ${mediaXLarge} {
+    padding: 0 31.5px;
+  }
+
+  @media ${mediaLarge} {
+    padding: 0 24px;
+  }
+`;
+
 const Anchor = styled.a<{ isSelected: boolean }>`
+  position: relative;
   display: flex;
   align-items: center;
-  position: relative;
-
   height: 100%;
 
   color: #222;
@@ -95,7 +90,10 @@ const DropDownBox = styled.div<{ isSelected: boolean }>`
   box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.05);
   width: 100%;
   position: absolute;
-  top: 90px;
+  top: 100%;
   left: 0;
   transition: opacity 0.45s;
+
+  /*header의 border-bottom영역에서 ListItem의 MouseLeave이벤트 발생 방지용*/
+  border-top: solid 1px #e2e2e2;
 `;

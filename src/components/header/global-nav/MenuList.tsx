@@ -10,9 +10,9 @@ const MenuList = ({ menus }: MenuList) => {
     <MenuListWrapper>
       {menus.map(({ title, href }, i) => {
         return (
-          <li key={i}>
-            <a href={href}>{title}</a>
-          </li>
+          <ListItem key={i}>
+            <Anchor href={href}>{title}</Anchor>
+          </ListItem>
         );
       })}
     </MenuListWrapper>
@@ -24,42 +24,42 @@ export default MenuList;
 const MenuListWrapper = styled.ul`
   background-color: #fff;
   margin-top: 20px;
+`;
 
-  > li {
-    &:not(:first-child) {
-      margin-top: 10px;
+const ListItem = styled.li`
+  &:not(:first-child) {
+    margin-top: 10px;
+  }
+`;
+
+const Anchor = styled.a`
+  display: block;
+  width: fit-content;
+  position: relative;
+
+  color: #222;
+  line-height: 1.4;
+
+  transition: color 0.45s;
+
+  &:hover {
+    color: #e3051b;
+
+    &::after {
+      width: 100%;
     }
+  }
 
-    > a {
-      display: block;
-      width: fit-content;
-      position: relative;
+  &::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 1px;
+    background-color: #e3051b;
+    position: relative;
+    bottom: 0;
+    left: 0;
 
-      color: #222;
-      line-height: 1.4;
-
-      transition: color 0.45s;
-
-      &:hover {
-        color: #e3051b;
-
-        &::after {
-          width: 100%;
-        }
-      }
-
-      &::after {
-        content: '';
-        display: block;
-        width: 0;
-        height: 1px;
-        background-color: #e3051b;
-        position: relative;
-        bottom: 0;
-        left: 0;
-
-        transition: 0.45s;
-      }
-    }
+    transition: 0.45s;
   }
 `;
