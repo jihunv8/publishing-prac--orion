@@ -11,4 +11,8 @@ const GlobalNav = () => {
 
 export default GlobalNav;
 
-const GlobalNavWrapper = styled.nav``;
+const GlobalNavWrapper = styled.nav`
+  @media screen and (max-width: 960px) {
+    display: none;
+  }
+`;

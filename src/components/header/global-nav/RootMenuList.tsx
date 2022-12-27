@@ -32,10 +32,6 @@ export default RootMenuList;
 const RootMenuListWrapper = styled.ul`
   height: 100%;
   display: flex;
-
-  @media screen and (max-width: 960px) {
-    display: none;
-  }
 `;
 
 const ListItem = styled.li`
@@ -53,6 +49,7 @@ const ListItem = styled.li`
 const Anchor = styled.a<{ isSelected: boolean }>`
   position: relative;
   display: flex;
+  justify-content: center;
   align-items: center;
   height: 100%;
 

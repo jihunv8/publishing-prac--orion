@@ -3,12 +3,16 @@ import styled from 'styled-components';
 import iconSearch from '../../images/header/icon-search.png';
 import { mediaXLarge } from '../../styles/mediaSize';
 
-const Util = () => {
+type UtilProps = {
+  setIsGlobalNavMOn: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+const Util = ({ setIsGlobalNavMOn }: UtilProps) => {
   return (
     <UtilWrapper>
       <EnglishLink href="/en">English</EnglishLink>
       <SearchBtn />
-      <HamburgerBtn>
+      <HamburgerBtn onClick={() => setIsGlobalNavMOn((prev) => !prev)}>
         <span></span>
         <span></span>
         <span></span>
@@ -46,6 +50,10 @@ const EnglishLink = styled.a`
   @media ${mediaXLarge} {
     margin-right: 28px;
     font-size: 1.225rem;
+  }
+
+  @media screen and (max-width: 960px) {
+    display: none;
   }
 `;
 

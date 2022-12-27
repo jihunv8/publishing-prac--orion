@@ -1,12 +1,16 @@
 import styled from 'styled-components';
 import { useIsScrollUp } from '../../hooks/scroll';
-
-import logoImage from '../../images/logo.png';
 import { mediaSmall, mediaXLarge } from '../../styles/mediaSize';
+import { useState } from 'react';
+
+import GlobalNavM from './global-nav/global-nav-m/GlobalNavM';
 import GlobalNav from './global-nav/GlobalNav';
 import Util from './Util';
 
+import logoImage from '../../images/logo.png';
+
 const Header = () => {
+  const [isGlobalNavMOn, setIsGlobalNavMOn] = useState(false);
   const isScrollUp = useIsScrollUp();
 
   return (
@@ -18,7 +22,8 @@ const Header = () => {
           </a>
         </LogoWrapper>
         <GlobalNav />
-        <Util />
+        <GlobalNavM isOn={isGlobalNavMOn} />
+        <Util setIsGlobalNavMOn={setIsGlobalNavMOn} />
       </InnerWrapper>
     </HeaderWrapper>
   );
