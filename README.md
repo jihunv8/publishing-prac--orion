@@ -11,7 +11,7 @@ npm start
 <br/>
 
 ## 사용 스택
-`React` `Typescript` `styled-coponents`
+`React` `Typescript` `styled-coponents` `msw`
 
 <br/>
 
@@ -60,9 +60,9 @@ npm start
 <br/>
 
 ## 뉴스룸
+msw를 사용해 가상서버를 구현하고 fetch를 통해 데이터를 주고 받았습니다.
 ### PC
 ![news-room-pc](https://user-images.githubusercontent.com/78804014/209742096-bb8a4b01-3def-4176-9b0f-264dd1df6f5b.gif)
----
 <br/>
 
 ### Mobile & Tablet
@@ -70,3 +70,10 @@ npm start
 <br/>
 
 ## Footer
+### PC
+![footer-pc](https://user-images.githubusercontent.com/78804014/209743132-af5b0a5b-bcd1-44e0-8a88-6ac8ab2b4fea.PNG)
+<br/>
+
+### Mobile & Tablet
+![footer-mobile](https://user-images.githubusercontent.com/78804014/209743134-19d73fe9-86de-4ccc-879a-38c682b33183.PNG)
+
