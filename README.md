@@ -19,16 +19,54 @@ npm start
 * 22.12.19(월), 22.09.21(수) ~ 22.12.26(목) (주말 제외 총 6일)
 <br/>
 
-## 결과물
+## 전체 페이지
+<details>
+  <summary>PC</summary>
+  <div markdown="1">
+    <img alt='full page PC' src='https://user-images.githubusercontent.com/78804014/209741921-d4cf621e-e511-4567-9e19-6f31e213c6f6.png'/>
+  </div>
+</details>
+<details>
+  <summary>Mobile & Tablet</summary>
+  <div markdown="1">
+    <img alt='full page Mobile & Tablet' src='https://user-images.githubusercontent.com/78804014/209741953-4a52512f-ba7c-4bfc-8294-15cb43e297b8.png'/>
+  </div>
+</details>
+<br/>
 
-### 전체 페이지
+## Header
+### global-navigation-bar 드롭다운 - PC
+![header-dropdown-pc](https://user-images.githubusercontent.com/78804014/209742054-6ae3ad9e-11c9-4cb7-a6a6-709664c3f21f.gif)
 
-### Header
+<br/>
 
-### 메인배너
+### global-navigation-bar - mobile & Tablet
+![header-dropdown-m](https://user-images.githubusercontent.com/78804014/209742059-2b6c69df-352d-433a-a22c-6c732dce37a2.gif)
 
-### 윤리경영
+<br/>
 
-### 뉴스룸
+### 페이지 스크롤시 Header 숨김 / 표시
+![header-scroll](https://user-images.githubusercontent.com/78804014/209742064-eaa205c1-e7ae-40db-8613-00e0533459e0.gif)
 
-### Footer
+<br/>
+
+## 메인배너
+![main-banner-auto-swipe](https://user-images.githubusercontent.com/78804014/209742071-a41d6661-3f96-47a5-a1a0-0a285e9f9781.gif)
+
+<br/>
+
+## 윤리경영
+![management-animation-pc](https://user-images.githubusercontent.com/78804014/209742088-c710885c-d0f9-49c7-8a39-90d5ab202d23.gif)
+<br/>
+
+## 뉴스룸
+### PC
+![news-room-pc](https://user-images.githubusercontent.com/78804014/209742096-bb8a4b01-3def-4176-9b0f-264dd1df6f5b.gif)
+---
+<br/>
+
+### Mobile & Tablet
+![newsroom-slide-m](https://user-images.githubusercontent.com/78804014/209742102-b8809091-717f-4498-a5fc-23990f985fb5.gif)
+<br/>
+
+## Footer
