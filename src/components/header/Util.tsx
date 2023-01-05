@@ -66,13 +66,13 @@ const SearchBtn = styled.button`
 `;
 
 const HamburgerBtn = styled.button`
+  display: none;
+  flex-direction: column;
+  align-items: flex-end;
   width: 30px;
   height: 30px;
   border: none;
   background: transparent;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
 
   > span {
     display: block;
@@ -92,5 +92,9 @@ const HamburgerBtn = styled.button`
       margin-top: 8px;
       width: 30px;
     }
+  }
+
+  @media screen and (max-width: 960px) {
+    display: flex;
   }
 `;
