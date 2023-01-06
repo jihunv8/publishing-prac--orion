@@ -1,6 +1,8 @@
-# 오리온 홈페이지 연습
-React, Typescript 퍼블리싱 연습 <br/>
-[오리온 홈페이지](https://www.orionworld.com/)를 참고하여 퍼블리싱 연습 <br/>
+# 오리온 홈페이지 클론
+[오리온 홈페이지](https://www.orionworld.com/)의 메인페이지 디자인을 참고하여 클론한 페이지 입니다. 
+Typescript의 연습과 웹페이지 구현속도를 측정하기 위한 목적으로 진행하였습니다.
+
+<br/>
 <br/>
 
 ## 시작
@@ -11,7 +13,7 @@ npm start
 <br/>
 
 ## 사용 스택
-`React` `Typescript` `styled-coponents` `msw`
+`Typescript` `React` `styled-coponents` `msw`
 
 <br/>
 
