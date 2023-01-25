@@ -69,6 +69,7 @@ const Content = styled.p`
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 
   transform: translateY(100%);
   transition: 0.35s ease-in-out;
