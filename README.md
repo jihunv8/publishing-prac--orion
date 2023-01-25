@@ -5,11 +5,9 @@ Typescript의 연습과 웹페이지 구현속도를 측정하기 위한 목적�
 <br/>
 <br/>
 
-## 시작
-```
-npm i
-npm start
-```
+## 배포 URL
+https://orion-clone.netlify.app
+
 <br/>
 
 ## 사용 스택
